@@ -1,0 +1,59 @@
+{{ 'marquee.css' | asset_url | stylesheet_tag }}
+{% if template.name != product %}
+<div class="color-inverse isolate gradient">
+<div class="marquee-horizontal">
+  <div class="track-horizontal-alt">
+    <div class="marquee-inner">
+      <h2 class="marquee-text">{{ section.settings.line1 }}</h2>
+      {% render 'marquee-icon' %}
+      <h2 class="marquee-text">{{ section.settings.line1 }}</h2>
+      {% render 'marquee-icon' %}
+      <h2 class="marquee-text">{{ section.settings.line1 }}</h2>
+      {% render 'marquee-icon' %}
+    </div>
+    <div class="marquee-inner">
+      <h2 class="marquee-text">{{ section.settings.line1 }}</h2>
+      {% render 'marquee-icon' %}
+      <h2 class="marquee-text">{{ section.settings.line1 }}</h2>
+      {% render 'marquee-icon' %}
+      <h2 class="marquee-text">{{ section.settings.line1 }}</h2>
+      {% render 'marquee-icon' %}
+    </div>
+  </div>
+</div>
+</div>
+{% else %}
+  {% if section.settings.line1 != blank %}
+    {% for line in section.settings.line1 %}
+      hi {{ line }}
+    {% endfor %}
+  {% endif %}
+{% endif %}
+{% schema %}
+  {
+    "name": "Marquee 📣",
+    "tag": "section",
+    "class": "marquee-section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Marquee Text"
+      },
+      {
+        "type": "text",
+        "label": "Line 1",
+        "id": "line1"
+      },
+      {
+        "type": "text",
+        "label": "Line 2",
+        "id": "line2"
+      }
+    ],
+    "presets" : [
+      {
+        "name": "Marquee 📣"
+      }
+    ]
+  }
+{% endschema %}

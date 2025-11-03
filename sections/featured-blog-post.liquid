@@ -1,0 +1,46 @@
+{{ 'featured-product-hero.css' | asset_url | stylesheet_tag }}
+
+<div class="featured_article__section">
+    {{ section.settings.article.title }}
+<div class="image_wrapper_article__section">
+    <img width=100 height=100 src="{{ section.settings.background-image | image_url }}">
+    fart
+</div>
+</div>
+{% schema %}
+    {
+    "name": "Featured Article",
+    "settings": [
+        {
+      "type": "article",
+      "id": "article",
+      "label": "Article"
+    },
+    {
+      "type": "image_picker",
+      "id": "background-image",
+      "label": "Background Image"
+    },
+    {
+        "type": "range",
+        "id": "opacity",
+        "max": 100,
+        "min": 0,
+        "label": "Image Opacity",
+        "default": 100
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background Color",
+      "default":"#000000"
+    }
+    ],
+    "presets": [
+        {
+        "name": "Featured Article"
+        }
+    ]
+
+    }
+{% endschema %}

@@ -1,0 +1,107 @@
+{{ 'featured-product-hero.css' | asset_url | stylesheet_tag }}
+{% style %}
+  .video-hero::before {
+    background: rgba(0, 0, 0, 0.{{ section.settings.image_overlay_opacity }});
+}
+{% endstyle %}
+<section class="video-hero color-{{ section.settings.color_scheme }}">
+  {% if section.settings.background_video %}
+    <div class="video-container">
+      {{ section.settings.background_video | video_tag: 
+          autoplay: true, 
+          loop: true, 
+          muted: true, 
+          controls: false,
+          preload: 'auto',
+          class: 'background-video'
+      }}
+    </div>
+  {% endif %}
+  <div class="video-content">
+    <h1>3D Model TBC</h1>
+  </div>
+  <a href="/{{ section.settings.article.url }}" class="hero-article-content">
+    {% assign connected_article = section.settings.article.metafields.custom.associated_recipe.value %}
+{% if connected_article %}
+  {% assign connected_product = connected_article.metafields.custom.gin_needed.value %}
+  {% if connected_product %}
+    <h3>{{ connected_product.title }}</h3>
+  {% endif %}
+{% endif %}
+    <p>{{ section.settings.article.excerpt }}</p>
+    <div class="hero-button-text">{{ section.settings.button-label }} {% render 'arrow-right' %}</div>
+</a>
+</section>
+
+{% schema %}
+    {
+    "name": "Product Highlight Hero",
+    "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "t:sections.featured-product.settings.product.label"
+    },
+    {
+      "type": "article",
+      "id": "article",
+      "label": "Article"
+    },
+    {
+    "type": "video",
+    "id": "background_video",
+    "label": "Background Video"
+    },
+    {
+      "type": "range",
+      "id": "image_overlay_opacity",
+      "min": 0,
+      "max": 90,
+      "step": 10,
+      "unit": "%",
+      "label": "t:sections.image-banner.settings.image_overlay_opacity.label",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "t:sections.all.colors.accent_1.label"
+        },
+        {
+          "value": "accent-2",
+          "label": "t:sections.all.colors.accent_2.label"
+        },
+        {
+          "value": "background-1",
+          "label": "t:sections.all.colors.background_1.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.all.colors.background_2.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.all.colors.inverse.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.all.colors.label"
+    },
+    {
+    "type": "text",
+    "id": "button-label",
+    "label": "Button label",
+    "default": "Field Notes"
+    }
+    ],
+    "presets": [
+        {
+        "name": "Homepage Hero"
+        }
+    ]
+
+    }
+{% endschema %}

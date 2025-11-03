@@ -1,0 +1,87 @@
+{{ 'featured-recipe.css' | asset_url | stylesheet_tag }}
+<section
+  id="MainProduct-{{ section.id }}"
+  class="section-{{ section.id }}-padding color-{{ section.settings.color_scheme }}"
+  data-section="{{ section.id }}"
+>
+    <div class="featured-recipe-wrapper">
+        <div class="featured-recipe-content border-top__thin justify-content_space-between">
+            {% if section.settings.header != blank %}<h5>{{  section.settings.header }}</h5>{% endif %}
+            <div class="recipe_summary-title">
+                <h4>{{ section.settings.article.title }}</h4>
+                <p>{{ section.settings.article.excerpt }}</p>
+            </div>
+            <div class="flex-horizontal justify-content_space-between">
+                <div class="recipe_details flex-vertical">
+                    <div class=flex-horizontal>
+                        <h5>Style:</h5>
+                        <h4>{{ section.settings.article.metafields.custom.style.value }}</h4>
+                    </div>
+                    <div class=flex-horizontal>
+                        <h5>Difficulty:</h5>
+                        <h4>{{ section.settings.article.metafields.custom.difficulty }}</h4>
+                        
+                    </div>
+                </div>
+                <a href="{{ section.settings.article.url }}" class="button button--secondary">See the Recipe</a>
+            </div>
+        </div>
+        <div class="recipe-image-wrapper">
+            <img src="{{ section.settings.article.image | image_url }}" width="400" height="500">
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Recipe",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "article",
+      "id": "article",
+      "label": "Featured Article"
+    },
+    {
+      "type": "text",
+      "id": "header",
+      "label": "Header",
+      "default": "Try it with:"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "t:sections.all.colors.accent_1.label"
+        },
+        {
+          "value": "accent-2",
+          "label": "t:sections.all.colors.accent_2.label"
+        },
+        {
+          "value": "background-1",
+          "label": "t:sections.all.colors.background_1.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.all.colors.background_2.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.all.colors.inverse.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.all.colors.label"
+    },
+  ],
+  "presets": [
+    {
+      "name": "Featured Recipe"
+    }
+  ]
+}
+{% endschema %}

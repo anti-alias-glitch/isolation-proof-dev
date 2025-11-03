@@ -1,0 +1,111 @@
+{{ 'flavor-profile.css' | asset_url | stylesheet_tag }}
+<section
+  id="MainProduct-{{ section.id }}"
+  class="section-{{ section.id }}-padding color-{{ section.settings.color_scheme }}"
+  data-section="{{ section.id }}"
+>
+  {%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+  {%- endstyle -%}
+
+  <div class="xl-page-width border-top__thin">
+    <div class="flavor-profile-title">
+        <h5>flavor</h5>
+        <h5>
+            Profile
+        </h5>
+        </div>
+        <div class="flavor-content">
+            <div class="flavor-chart">
+              {{ product.metafields.custom.flavor_profile_chart | image_url: width: 100 | image_tag:
+                class: 'flavor-chart',
+                widths: '50, 100, 150, 200, 250, 300, 400, 500',
+                height: logo_height,
+                width: 100,
+                alt: logo_alt
+              }}
+            </div>
+            <div class="flavor-profile-blocks">
+            <div class="flavor-profile-block">
+                <h2>primary</h2>
+                {{ product.metafields.custom.flavor_profile.value[0] }}
+            </div>
+            <div class="flavor-profile-block">
+                <h2>secondary</h2>
+                {{ product.metafields.custom.flavor_profile.value[1] }}
+            </div>
+            <div class="flavor-profile-block">
+                <h2>Finish</h2>
+                {{ product.metafields.custom.flavor_profile.value[2] }}
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+{% schema %}
+{
+  "name": "Flavor Profile",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "t:sections.all.colors.accent_1.label"
+        },
+        {
+          "value": "accent-2",
+          "label": "t:sections.all.colors.accent_2.label"
+        },
+        {
+          "value": "background-1",
+          "label": "t:sections.all.colors.background_1.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.all.colors.background_2.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.all.colors.inverse.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.all.colors.label"
+    },
+    {
+        "type": "product",
+        "id": "product",
+        "label": "Product"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Flavor Profile"
+    }
+  ]
+}
+{% endschema %}
