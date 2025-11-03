@@ -1,0 +1,50 @@
+.flavor-profile-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0rem;
+}
+.flavor-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 80%;
+    margin: 0 auto;
+    gap:4rem;
+    align-items:center;
+    margin-top:10rem;
+    min-height:50vh;
+}
+
+.flavor-chart {
+    width:90%;
+    padding:2rem;
+}
+
+@media and (min-width: 990px) {
+    .flavor-chart {
+        min-width: 40rem;
+    }
+}
+
+.flavor-profile-blocks {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    row-gap: 2rem;
+    padding: 7rem 0 7rem 7rem;
+    align-self: end;
+    width: 100%;
+    justify-self: end;
+}
+
+.flavor-profile-block {
+    border-bottom: 1px dotted;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+}
+
+.flavor-profile-block:first-child {
+    border-top: 1px dotted;
+    padding-top:2rem;
+}

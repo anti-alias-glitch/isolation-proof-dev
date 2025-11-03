@@ -1,0 +1,59 @@
+.core-botanicals-inner {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    max-width:1800px;
+    margin: 0 auto;
+}
+
+ol.core-botanicals__list {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap:8rem 4rem;
+    padding-left:0;
+}
+
+.core-botanicals_list-item {
+    display:flex;
+    flex-direction:column;
+}
+
+img.botanical-illustration {
+    width: 9vw;
+    max-width:100px;
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
+}
+
+.botanical-illustration-wrap {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul.core-botanicals-images__list {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    padding-left:0rem;
+}
+
+.core-botanicals__right {
+    padding:5rem;
+    display: flex;
+    justify-content:center;
+}
+
+.botanicals__row {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+}
+
+.core-botanicals__left {
+    padding: 6rem;
+    border-right: .5px solid;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+}

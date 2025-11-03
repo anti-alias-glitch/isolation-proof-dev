@@ -1,0 +1,94 @@
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+@media screen and (min-width: 750px) {
+  .newsletter-form {
+    align-items: center;
+    margin: 0 auto;
+    max-width: none;
+  }
+}
+
+.newsletter-form__field-wrapper {
+  width: 100%;
+  display: flex;
+  column-gap: 1rem;
+  align-items:center;
+}
+
+.newsletter-form__field-wrapper .field__input {
+  padding-right: 5rem;
+  border-radius: 20px;
+  background: rgba(239, 229, 209, 0.13);
+  box-shadow: 1px 1px 4px 0 rgba(255, 255, 255, 0.25), 0 0 4px 0 rgba(0, 0, 0, 0.00), 1px 1px 2px 0 rgba(0, 0, 0, 0.15) inset;
+  backdrop-filter: blur(17px);
+}
+
+.newsletter-form__field-wrapper .field {
+  z-index: 0;
+}
+
+.newsletter-form__field-wrapper .field::after {
+  content: unset;
+}
+
+.newsletter-form__message {
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.newsletter-form__message--success {
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 750px) {
+  .newsletter-form__message {
+    justify-content: flex-start;
+  }
+}
+
+.newsletter-form__button {
+  width: auto;
+  min-width: calc(12rem + var(--buttons-border-width) * 2);
+  min-height: calc(3.5rem + var(--buttons-border-width) * 2);
+  font-family: "Century Schoolbook";
+  text-transform:uppercase;
+  margin: 0;
+  right: var(--inputs-border-width);
+  top: 0;
+  height: 100%;
+  z-index: 2;
+  position: static;
+  border-radius: 20px;
+  background: rgba(239, 229, 209, 0.23);
+/* dropshadow */
+  box-shadow: 1px 1px 4px 0 rgba(255, 255, 255, 0.25) inset, 0 0 4px 0 rgba(0, 0, 0, 0.00) inset, 1px 1px 2px 0 rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(17px);
+  padding: 10px 25px;
+  flex-shrink:0;
+}
+
+.newsletter-form__button:focus-visible {
+  box-shadow: 0 0 0 .3rem rgb(var(--color-background)),0 0 0 .4rem rgba(var(--color-foreground));
+  background-color: rgb(var(--color-background));
+}
+
+.newsletter-form__button:focus {
+  box-shadow: 0 0 0 .3rem rgb(var(--color-background)),0 0 0 .4rem rgba(var(--color-foreground));
+  background-color: rgb(var(--color-background));
+}
+
+.newsletter-form__button:not(:focus-visible):not(.focused) {
+  box-shadow: inherit;
+  background-color: inherit;
+}
+
+.newsletter-form__button .icon {
+  width: 1.5rem;
+}

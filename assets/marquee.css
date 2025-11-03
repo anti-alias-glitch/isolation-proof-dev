@@ -1,0 +1,38 @@
+.marquee-horizontal {
+  z-index: 0;
+  padding2.5rem 0rem;
+  font-size:1.2rem;
+  text-transform:uppercase;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid;
+  position:relative;
+  overflow:hidden;
+  font-family: termina, sans-serif;
+  font-weight:600;
+}
+
+.marquee-inner {
+  display: flex;
+  align-items:center;
+}
+
+.marquee-text {
+  margin:0 3vw;
+}
+.track-horizontal-alt {
+  display: flex;
+  margin-left: 0vw;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee-horizontal-alt 180s linear infinite;
+}
+
+@keyframes marquee-horizontal-alt {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-50%); }
+}

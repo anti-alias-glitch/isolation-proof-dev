@@ -1,0 +1,517 @@
+{% doc %}
+  @prompt
+    Featured collection grid that allows you to click between color swatches to preview variant options
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-featured-collection-{{ ai_gen_id }} {
+    padding: {{ block.settings.section_padding }}px 0;
+  }
+
+  .ai-featured-collection__container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ai-featured-collection__header-{{ ai_gen_id }} {
+    text-align: {{ block.settings.heading_alignment }};
+    margin-bottom: 40px;
+  }
+
+  .ai-featured-collection__title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0;
+  }
+
+  .ai-featured-collection__grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat({{ block.settings.columns_desktop }}, 1fr);
+    gap: {{ block.settings.grid_gap }}px;
+  }
+
+  .ai-featured-collection__product-card-{{ ai_gen_id }} {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ai-featured-collection__image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    background-color: #f4f4f4;
+    margin-bottom: 12px;
+  }
+
+  .ai-featured-collection__image-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-featured-collection__image-{{ ai_gen_id }}.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .ai-featured-collection__product-info-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ai-featured-collection__product-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.product_title_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0;
+    text-decoration: none;
+  }
+
+  .ai-featured-collection__product-title-{{ ai_gen_id }}:hover {
+    opacity: 0.7;
+  }
+
+  .ai-featured-collection__product-price-{{ ai_gen_id }} {
+    font-size: {{ block.settings.product_price_size }}px;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-featured-collection__swatches-{{ ai_gen_id }} {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .ai-featured-collection__swatch-{{ ai_gen_id }} {
+    width: {{ block.settings.swatch_size }}px;
+    height: {{ block.settings.swatch_size }}px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .ai-featured-collection__swatch-{{ ai_gen_id }}:hover {
+    transform: scale(1.1);
+  }
+
+  .ai-featured-collection__swatch-{{ ai_gen_id }}.active {
+    border-color: {{ block.settings.swatch_active_border_color }};
+    box-shadow: 0 0 0 1px {{ block.settings.swatch_active_border_color }};
+  }
+
+  .ai-featured-collection__empty-state-{{ ai_gen_id }} {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-featured-collection__grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-featured-collection__grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat({{ block.settings.columns_mobile }}, 1fr);
+    }
+
+    .ai-featured-collection__title-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}px * 0.8);
+    }
+  }
+{% endstyle %}
+
+<featured-collection-{{ ai_gen_id }} class="ai-featured-collection-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-featured-collection__container-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank %}
+      <div class="ai-featured-collection__header-{{ ai_gen_id }}">
+        <h2 class="ai-featured-collection__title-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+      </div>
+    {% endif %}
+
+    {% if block.settings.collection != blank %}
+      <div class="ai-featured-collection__grid-{{ ai_gen_id }}">
+        {% for product in block.settings.collection.products limit: block.settings.products_to_show %}
+          <div class="ai-featured-collection__product-card-{{ ai_gen_id }}" data-product-id="{{ product.id }}">
+            <div class="ai-featured-collection__image-wrapper-{{ ai_gen_id }}">
+              {% if product.featured_image %}
+                <img
+                  src="{{ product.featured_image | image_url: width: 600 }}"
+                  alt="{{ product.featured_image.alt | escape }}"
+                  loading="lazy"
+                  width="600"
+                  height="600"
+                  class="ai-featured-collection__image-{{ ai_gen_id }}"
+                  data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                >
+              {% endif %}
+
+              {% for variant in product.variants %}
+                {% if variant.featured_image and variant.id != product.selected_or_first_available_variant.id %}
+                  <img
+                    src="{{ variant.featured_image | image_url: width: 600 }}"
+                    alt="{{ variant.featured_image.alt | escape }}"
+                    loading="lazy"
+                    width="600"
+                    height="600"
+                    class="ai-featured-collection__image-{{ ai_gen_id }} hidden"
+                    data-variant-id="{{ variant.id }}"
+                  >
+                {% endif %}
+              {% endfor %}
+            </div>
+
+            <div class="ai-featured-collection__product-info-{{ ai_gen_id }}">
+              <a href="{{ product.url }}" class="ai-featured-collection__product-title-{{ ai_gen_id }}">
+                {{ product.title }}
+              </a>
+
+              <div class="ai-featured-collection__product-price-{{ ai_gen_id }}">
+                {{ product.price | money }}
+              </div>
+
+              {% assign color_option_index = nil %}
+              {% for option in product.options_with_values %}
+                {% assign option_name_downcase = option.name | downcase %}
+                {% if option_name_downcase == 'color' %}
+                  {% assign color_option_index = forloop.index0 %}
+                  {% break %}
+                {% endif %}
+              {% endfor %}
+
+              {% if color_option_index != nil %}
+                <div class="ai-featured-collection__swatches-{{ ai_gen_id }}">
+                  {% assign color_option = product.options_with_values[color_option_index] %}
+                  {% for value in color_option.values %}
+                    {% assign variant_for_color = nil %}
+                    {% for variant in product.variants %}
+                      {% if color_option_index == 0 and variant.option1 == value %}
+                        {% assign variant_for_color = variant %}
+                        {% break %}
+                      {% elsif color_option_index == 1 and variant.option2 == value %}
+                        {% assign variant_for_color = variant %}
+                        {% break %}
+                      {% elsif color_option_index == 2 and variant.option3 == value %}
+                        {% assign variant_for_color = variant %}
+                        {% break %}
+                      {% endif %}
+                    {% endfor %}
+
+                    {% if variant_for_color %}
+                      {% assign color_value_downcase = value | downcase %}
+                      {% assign swatch_color = color_value_downcase %}
+                      
+                      {% if color_value_downcase == 'white' %}
+                        {% assign swatch_color = '#ffffff' %}
+                      {% elsif color_value_downcase == 'black' %}
+                        {% assign swatch_color = '#000000' %}
+                      {% elsif color_value_downcase == 'red' %}
+                        {% assign swatch_color = '#ff0000' %}
+                      {% elsif color_value_downcase == 'blue' %}
+                        {% assign swatch_color = '#0000ff' %}
+                      {% elsif color_value_downcase == 'green' %}
+                        {% assign swatch_color = '#00ff00' %}
+                      {% elsif color_value_downcase == 'yellow' %}
+                        {% assign swatch_color = '#ffff00' %}
+                      {% elsif color_value_downcase == 'pink' %}
+                        {% assign swatch_color = '#ffc0cb' %}
+                      {% elsif color_value_downcase == 'purple' %}
+                        {% assign swatch_color = '#800080' %}
+                      {% elsif color_value_downcase == 'orange' %}
+                        {% assign swatch_color = '#ffa500' %}
+                      {% elsif color_value_downcase == 'brown' %}
+                        {% assign swatch_color = '#a52a2a' %}
+                      {% elsif color_value_downcase == 'grey' or color_value_downcase == 'gray' %}
+                        {% assign swatch_color = '#808080' %}
+                      {% elsif color_value_downcase == 'navy' %}
+                        {% assign swatch_color = '#000080' %}
+                      {% elsif color_value_downcase == 'beige' %}
+                        {% assign swatch_color = '#f5f5dc' %}
+                         {% elsif color_value_downcase == 'beige' %}
+                        {% assign swatch_color = '#f5f5dc' %}
+                      {% endif %}
+
+                      {% comment %} Get color pattern metafield from product {% endcomment %}
+                      {% assign color_patterns = product.metafields.shopify.color-pattern.value %}
+
+                        {% comment %} Find matching color pattern for current color value {% endcomment %}
+                        {% assign swatch_image = null %}
+                        {% if color_patterns %}
+                          {% for pattern in color_patterns %}
+                            {% assign pattern_label_downcase = pattern.label | downcase %}
+                            {% assign current_color_downcase = value | downcase %}
+                            {% if pattern_label_downcase == current_color_downcase %}
+                              {% assign swatch_image = pattern.image %}
+                              {% break %}
+                            {% endif %}
+                          {% endfor %}
+                        {% endif %}
+
+                        <button
+                          class="ai-featured-collection__swatch-{{ ai_gen_id }} {% if variant_for_color.id == product.selected_or_first_available_variant.id %}active{% endif %}"
+                          {% if swatch_image %}
+                            style="background-image: url('{{ swatch_image | image_url: width: 60 }}'); background-size: cover; background-position: center;"
+                          {% else %}
+                            style="background-color: {{ swatch_color }};"
+                          {% endif %}
+                          data-variant-id="{{ variant_for_color.id }}"
+                          aria-label="{{ value }}"
+                          title="{{ value }}"
+                        ></button>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="ai-featured-collection__empty-state-{{ ai_gen_id }}">
+        <p>Next, select a collection to display products</p>
+      </div>
+    {% endif %}
+  </div>
+</featured-collection-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class FeaturedCollection{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.productCards = this.querySelectorAll('.ai-featured-collection__product-card-{{ ai_gen_id }}');
+        this.setupSwatches();
+      }
+
+      setupSwatches() {
+        this.productCards.forEach((card) => {
+          const swatches = card.querySelectorAll('.ai-featured-collection__swatch-{{ ai_gen_id }}');
+          const images = card.querySelectorAll('.ai-featured-collection__image-{{ ai_gen_id }}');
+
+          swatches.forEach((swatch) => {
+            swatch.addEventListener('click', (e) => {
+              e.preventDefault();
+              const variantId = swatch.getAttribute('data-variant-id');
+
+              swatches.forEach((s) => s.classList.remove('active'));
+              swatch.classList.add('active');
+
+              images.forEach((img) => {
+                const imgVariantId = img.getAttribute('data-variant-id');
+                if (imgVariantId === variantId) {
+                  img.classList.remove('hidden');
+                } else {
+                  img.classList.add('hidden');
+                }
+              });
+            });
+          });
+        });
+      }
+    }
+
+    customElements.define('featured-collection-{{ ai_gen_id }}', FeaturedCollection{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Featured collection grid",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Collection"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "label": "Products to show",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Featured collection"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 32
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#473f21"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Columns on desktop",
+      "default": 4
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Columns on mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "min": 8,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "label": "Grid gap",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Section padding",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Product card"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Image border radius",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "product_title_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "product_price_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Price size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#473f21"
+    },
+    {
+      "type": "header",
+      "content": "Color swatches"
+    },
+    {
+      "type": "range",
+      "id": "swatch_size",
+      "min": 20,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Swatch size",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "swatch_active_border_color",
+      "label": "Active border color",
+      "default": "#473f21"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured collection grid"
+    }
+  ]
+}
+{% endschema %}

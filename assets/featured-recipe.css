@@ -1,0 +1,29 @@
+.featured-recipe-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 75vh;
+}
+
+.featured-recipe-content {
+    margin-top: 5rem;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 7rem;
+}
+
+.recipe_details {
+    display:flex;
+    row-gap: 1rem;
+}
+.recipe-image-wrapper {
+    position: relative;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        position: absolute;
+        object-fit: cover;
+        height: 100%;
+    }
+}
