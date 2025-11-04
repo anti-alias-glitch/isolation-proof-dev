@@ -9,16 +9,17 @@
     <div class="field-notes" style="text-transform:uppercase">Field Notes</div>
     <div>{{ section.settings.article.created_at | date: '%m.%d.%Y' }}</div>
     {% comment %} <div>{{ section.settings.article.metafields.custom.location.value}}</div> {% endcomment %}
-        <div>Town</div>
-                <div>City</div>
-
-                
-
-    <div> {{ section.settings.article.title }}</div>
-
-<button>Read More</button>
+    <div>Town</div>
+    <div>City</div>
   </div>
-</div>
+
+  <div>
+        <div> {{ section.settings.article.title }}</div>
+        <button>Read More</button>
+  </div>
+          
+
+  </div>
 {% schema %}
     {
     "name": "Featured Article",
