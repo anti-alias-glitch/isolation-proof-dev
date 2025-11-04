@@ -7,13 +7,12 @@
         <img width=100% height=600px style="object-fit: cover" src="{{ section.settings.article.image | image_url }}">
     </div>
 
-  <div   width=100% height=500px  style="display:flex; gap: 30px;">
+  <div   width=100% height=500px  style="display:flex; gap: 50px;">
     <p>Field Notes</p>
       <div>{{ section.settings.article.created_at | date: '%m.%d.%Y' }}</div>
       <div>{{ section.settings.article.metafields.custom.location }}</div>
-        
-          {{ section.settings.article.title }}
-            {{ section.settings.article.title }}
+              <div> {{ section.settings.article.title }}</div>
+
 
   </div>
 </div>
