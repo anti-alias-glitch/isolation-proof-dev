@@ -1,1 +1,202 @@
-{"sections":{"hero_section_qnFWnp":{"type":"hero-section","name":"Product Highlight Hero","settings":{"product":"original-gin","article":"field-notes\/blog-post-1","background_video":"shopify:\/\/files\/videos\/Sequence 01.mp4","image_overlay_opacity":50,"color_scheme":"inverse"}},"marquee_NKfkR8":{"type":"marquee","name":"Marquee 📣","settings":{"line1":"We make gin in the Catskills  with mountain spring water and local NY ingredients","line2":"We make gin in the Catskills  with mountain spring water and local NY ingredients"}},"176167210765fa7fa4":{"type":"_blocks","settings":{}},"homepage_gin_9CCyTb":{"type":"homepage-gin","name":"Homepage Gin","settings":{"collection":"gins","enable_quick_add":true,"color_scheme":"background-1"}},"17618645736cae760e":{"type":"_blocks","blocks":{"ai_gen_block_0c02599_GJVHVQ":{"type":"ai_gen_block_0c02599","settings":{"collection":"merch","products_to_show":4,"heading":"Featured collection","heading_size":32,"heading_alignment":"center","heading_color":"#473f21","columns_desktop":4,"columns_mobile":"2","grid_gap":20,"section_padding":40,"image_border_radius":0,"product_title_size":16,"product_price_size":14,"text_color":"#473f21","swatch_size":28,"swatch_active_border_color":"#473f21"},"blocks":{}}},"block_order":["ai_gen_block_0c02599_GJVHVQ"],"settings":{}},"slideshow_zQb99i":{"type":"slideshow","blocks":{"slide_bfmTL6":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/Screenshot_2025-10-20_at_5.02.30_PM.png","heading":"Image slide","heading_size":"h1","subheading":"Tell your brand's story through images","button_label":"Button label","link":"","button_style_secondary":false,"box_align":"middle-center","show_text_box":true,"text_alignment":"center","image_overlay_opacity":0,"color_scheme":"background-1","text_alignment_mobile":"center"}},"slide_XKAcJ4":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/Screenshot_2025-10-20_at_5.02.30_PM.png","heading":"Image slide","heading_size":"h1","subheading":"Tell your brand's story through images","button_label":"Button label","link":"","button_style_secondary":false,"box_align":"middle-center","show_text_box":true,"text_alignment":"center","image_overlay_opacity":0,"color_scheme":"background-1","text_alignment_mobile":"center"}}},"block_order":["slide_bfmTL6","slide_XKAcJ4"],"name":"t:sections.slideshow.presets.name","settings":{"layout":"full_bleed","slide_height":"adapt_image","slider_visual":"dots","auto_rotate":false,"change_slides_speed":5,"show_text_below":true,"accessibility_info":"Slideshow about our brand"}},"custom_featured_collection_d6qJ9Y":{"type":"custom-featured-collection","name":"Custom Featured Collection (merch grid)","settings":{"title":"Need Some Clothes to wear while you drink?","show_variants":true,"simple":true,"heading_size":"h2","description":"","description_style":"body","collection":"merch","products_to_show":9,"columns_desktop":3,"full_width":true,"show_view_all":true,"view_all_style":"solid","enable_desktop_slider":false,"color_scheme":"background-1","image_ratio":"square","show_secondary_image":false,"show_vendor":false,"columns_mobile":"1","swipe_on_mobile":true,"padding_top":12,"padding_bottom":36,"border_top":false}},"article_tabs_Xac7Uz":{"type":"article-tabs","name":"Tab section","settings":{"tab_1_enabled":true,"tab_1_title":"Bartender Recipes","tab_1_blog":"recipes","tab_2_enabled":true,"tab_2_title":"Our Favorites","products_to_show":6,"full_width":false,"show_view_all":true,"enable_desktop_slider":true,"color_scheme":"background-2","image_ratio":"adapt","enable_quick_add":false,"columns_mobile":"2","swipe_on_mobile":false,"padding_top":36,"padding_bottom":36}}},"order":["hero_section_qnFWnp","marquee_NKfkR8","176167210765fa7fa4","homepage_gin_9CCyTb","17618645736cae760e","slideshow_zQb99i","custom_featured_collection_d6qJ9Y","article_tabs_Xac7Uz"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero_section_qnFWnp": {
+      "type": "hero-section",
+      "name": "Product Highlight Hero",
+      "settings": {
+        "product": "original-gin",
+        "article": "field-notes/blog-post-1",
+        "background_video": "shopify://files/videos/Sequence 01.mp4",
+        "image_overlay_opacity": 50,
+        "color_scheme": "inverse",
+        "button-label": "Field Notes"
+      }
+    },
+    "marquee_NKfkR8": {
+      "type": "marquee",
+      "name": "Marquee 📣",
+      "settings": {
+        "line1": "We make gin in the Catskills  with mountain spring water and local NY ingredients",
+        "line2": "We make gin in the Catskills  with mountain spring water and local NY ingredients"
+      }
+    },
+    "176167210765fa7fa4": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "homepage_gin_9CCyTb": {
+      "type": "homepage-gin",
+      "name": "Homepage Gin",
+      "settings": {
+        "collection": "gins",
+        "enable_quick_add": true,
+        "color_scheme": "background-1"
+      }
+    },
+    "17618645736cae760e": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_0c02599_GJVHVQ": {
+          "type": "ai_gen_block_0c02599",
+          "settings": {
+            "collection": "merch",
+            "products_to_show": 4,
+            "heading": "Featured collection",
+            "heading_size": 32,
+            "heading_alignment": "center",
+            "heading_color": "#473f21",
+            "columns_desktop": 4,
+            "columns_mobile": "2",
+            "grid_gap": 20,
+            "section_padding": 40,
+            "image_border_radius": 0,
+            "product_title_size": 16,
+            "product_price_size": 14,
+            "text_color": "#473f21",
+            "swatch_size": 28,
+            "swatch_active_border_color": "#473f21"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_0c02599_GJVHVQ"
+      ],
+      "settings": {}
+    },
+    "slideshow_zQb99i": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_bfmTL6": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-10-20_at_5.02.30_PM.png",
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_XKAcJ4": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-10-20_at_5.02.30_PM.png",
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_bfmTL6",
+        "slide_XKAcJ4"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "custom_featured_collection_d6qJ9Y": {
+      "type": "custom-featured-collection",
+      "name": "Custom Featured Collection (merch grid)",
+      "settings": {
+        "title": "Need Some Clothes to wear while you drink?",
+        "show_variants": true,
+        "simple": true,
+        "heading_size": "h2",
+        "description": "",
+        "description_style": "body",
+        "collection": "merch",
+        "products_to_show": 9,
+        "columns_desktop": 3,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 12,
+        "padding_bottom": 36,
+        "border_top": false
+      }
+    },
+    "article_tabs_Xac7Uz": {
+      "type": "article-tabs",
+      "name": "Tab section",
+      "settings": {
+        "tab_1_enabled": true,
+        "tab_1_title": "Bartender Recipes",
+        "tab_1_blog": "recipes",
+        "tab_2_enabled": true,
+        "tab_2_title": "Our Favorites",
+        "products_to_show": 6,
+        "full_width": false,
+        "show_view_all": true,
+        "enable_desktop_slider": true,
+        "color_scheme": "background-2",
+        "image_ratio": "adapt",
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_blog_post_qW9j7W": {
+      "type": "featured-blog-post",
+      "name": "Featured Article",
+      "settings": {
+        "article": "recipes/negroni",
+        "opacity": 100,
+        "background": "#000000"
+      }
+    }
+  },
+  "order": [
+    "hero_section_qnFWnp",
+    "marquee_NKfkR8",
+    "176167210765fa7fa4",
+    "homepage_gin_9CCyTb",
+    "17618645736cae760e",
+    "slideshow_zQb99i",
+    "custom_featured_collection_d6qJ9Y",
+    "article_tabs_Xac7Uz",
+    "featured_blog_post_qW9j7W"
+  ]
+}
