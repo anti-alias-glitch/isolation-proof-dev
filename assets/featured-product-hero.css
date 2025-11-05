@@ -83,15 +83,14 @@
 
     .featured-article .row1{
       width: 95%;
-              align-self:center;
-              font-size: calc(1.25em);
-      
-              font-weight: 400;
-              line-height: 110%; 
-              text-transform: uppercase;
-              font-family: 'Saa Series';
-              border-bottom: 1px solid #EFE5D1;
-              padding: 0px 3px 5px 3px; 
-              display:flex; 
-              justify-content:space-between;
+      display:flex; 
+      justify-content:space-between;
+      padding: 0px 3px 5px 3px; 
+      align-self:center;
+      font-size: calc(1.25em);
+      font-weight: 400;
+      line-height: 110%; 
+      text-transform: uppercase;
+      font-family: 'Saa Series';
+      border-bottom: 1px solid #EFE5D1;     
     }
