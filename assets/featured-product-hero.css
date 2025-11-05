@@ -99,5 +99,5 @@
       text-decoration: none; 
     }
     .featured-article a:visited{
-      text-decoration: 1px solid pink; 
+      text-decoration: underline; 
     }
