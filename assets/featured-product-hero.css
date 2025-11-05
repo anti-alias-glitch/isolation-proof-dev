@@ -97,7 +97,5 @@
 
     .featured-article a{
       text-decoration: none; 
-    }
-    .featured-article a:visited{
-      text-decoration: underline; 
+      color:#EFE5D1;
     }
