@@ -95,6 +95,6 @@
       border-bottom: 1px solid #EFE5D1;     
     }
 
-    .featured-article a, .featured-article a:visited{
+    .featured-article a, .featured-article a::visited{
       text-decoration: none; 
     }
