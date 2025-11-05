@@ -100,9 +100,18 @@
       color:#EFE5D1;
     }
 
-    .row2{
+     .featured-article .row2{
       width: 95%;
       align-self:center;
       display:flex;
       justify-content:space-between;
+    }
+
+    .featured-article h2{
+      color: #EFE5D1;
+      font-family: 'Futura';
+      font-size: 42.527px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 110%;
     }
