@@ -3,7 +3,6 @@
 
   
 {%- liquid assign article = section.settings.article -%}
-{%- liquid assign article = section.settings.name -%}
 
 {% comment %} what kind of dynamic class do i want to add here?  {% endcomment %}
 <div class = " {{ section.settings.Featured-Article }} ac-main-content" style="color: #EFE5D1; padding: 14em 0vw 4em 0vw ; background-image:url({{ section.settings.article.image | image_url }}); width: 100%; height: 700px;background-size:cover; opacity: 0.9; display:flex; flex-direction:column; justify-content:space-between" class="featured_article__section">
@@ -38,6 +37,7 @@
 {% schema %}
     {
     "name": "Featured Article",
+    "class":"featured-article",
     "settings": [
         {
       "type": "article",
