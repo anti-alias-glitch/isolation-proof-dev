@@ -10,7 +10,7 @@
 
   <div style=" width: 95%; align-self:center; border-bottom: 1px solid #EFE5D1; padding: 0px 3px 5px 3px; display:flex; justify-content:space-between">
     <div class="field-notes" style="text-transform:uppercase">Field Notes</div>
-    <div>{{ section.settings.article.created_at | date: '%m.%d.%Y' }}</div>
+    <div>{{ article.created_at | date: '%m.%d.%Y' }}</div>
     <div>Town</div>
     <div> {{ article.metafields.custom.location.value.town }} </div>
   </div>
