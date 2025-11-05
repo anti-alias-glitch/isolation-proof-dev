@@ -94,3 +94,7 @@
       font-family: 'Saa Series';
       border-bottom: 1px solid #EFE5D1;     
     }
+
+    .featured-article a{
+      text-decoration: none; 
+    }
