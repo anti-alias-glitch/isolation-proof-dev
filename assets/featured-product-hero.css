@@ -99,3 +99,10 @@
       text-decoration: none; 
       color:#EFE5D1;
     }
+
+    .row2{
+      width: 95%;
+      align-self:center;
+      display:flex;
+      justify-content:space-between;
+    }
