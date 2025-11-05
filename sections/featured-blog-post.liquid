@@ -11,8 +11,8 @@
       <a href="{{ article.url }}">Field Notes</a>
     </div>
     <div>{{ article.created_at | date: '%m.%d.%Y' }}</div>
-    <div>Town</div>
-    <div> {{ article.metafields.custom.location.value.town }} </div>
+    <div>{{ article.metafields.custom.location.value.town }}</div>
+    <div> {{ article.metafields.custom.location.value.state }} </div>
   </div>
 
   <div style="width: 95%; align-self:center; display:flex; justify-content:space-between;">
