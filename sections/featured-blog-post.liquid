@@ -6,20 +6,9 @@
 
 <div class = "main-content" style="background-image:url({{ section.settings.article.image | image_url }});" class="featured_article__section">
 
-  <div class = "row1" style="width: 95%;
-              align-self:center;
-              font-size: calc(1.25em);
-      
-              font-weight: 400;
-              line-height: 110%; 
-              text-transform: uppercase;
-              font-family: 'Saa Series';
-              border-bottom: 1px solid #EFE5D1;
-              padding: 0px 3px 5px 3px; 
-              display:flex; 
-              justify-content:space-between">
+  <div class = "row1" >
     <div>
-      <a class="field-notes"  style="text-transform:uppercase">Field Notes</a>
+      <a>Field Notes</a>
     </div>
     <div>{{ article.created_at | date: '%m.%d.%Y' }}</div>
     <div>Town</div>
