@@ -1,14 +1,5 @@
-.Process .main-content{
-    display:flex;
-    flex-direction: row; 
-    height: 700px;
-}
+/* not really using this  */
 
-.Process .column1 {
-    border: solid 1px purple;
-    width: 40%;
-    height: 100% 
-}
 
 .Process .column1 {
     border: solid 1px green; 
