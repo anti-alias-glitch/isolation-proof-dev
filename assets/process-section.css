@@ -1,10 +1,13 @@
 .Process .main-content{
     display:flex;
     flex-direction: row; 
+    height: 500px;
 }
 
 .Process .column1 {
-    border: solid 1px purple; 
+    border: solid 1px purple;
+    width: 33%;
+    height: 100% 
 }
 
 .Process .column1 {
