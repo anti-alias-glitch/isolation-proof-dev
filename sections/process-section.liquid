@@ -1,24 +1,22 @@
 <section class="process-section">
   <div class="process-wrapper">
     
-    
-    <div class="process-image">
-      {% if section.settings.process_image %}
-        <img 
-          src="{{ section.settings.process_image | img_url: 'master' }}" 
-      {% endif %}
-    </div>
-
-    <div class="process-content">
-        <h2 class="process-heading">{{ section.settings.heading }}</h2>
-      
-      <div class="process-steps">
-         <div class="process-step">
-              <span class="step-number">{{ i }}.</span>
-              <p class="step-text">{{ step_text }}</p>
+        <div class="process-image">
+        {% if section.settings.process_image %}
+            <img 
+            src="{{ section.settings.process_image | img_url: 'master' }}" 
+        {% endif %}
         </div>
-    </div>
-    </div>
+
+        <div class="process-content">
+            <h2 class="process-heading">{{ section.settings.heading }}</h2>
+                    {% comment %} <div class="process-steps">
+                        <div class="process-step">
+                            <span class="step-number">{{ i }}.</span>
+                            <p class="step-text">{{ step_text }}</p>
+                        </div>
+                    </div> {% endcomment %}
+        </div>
   </div>
 </section>
 
