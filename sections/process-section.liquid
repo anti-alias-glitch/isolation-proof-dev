@@ -38,13 +38,9 @@
                         
                         </div>
 
-                         <div class="col2">
+                     
 
-                       {% comment %} only for border  {% endcomment %}
-                        
-                        </div>
-
-                        <div class="col3">
+                        <div class="col2">
 
                              <div class="process-step">
                                 <div class="dot"></div>
@@ -79,16 +75,29 @@
 <style>
 
 
-.process-grid {
-  display: flex;
-}
+  .process-wrapper {
+    display:flex;
+    flex-direction: column; 
+    height: 100%;
+    gap: 2rem;
+    border-bottom: 1px solid purple; 
+  }
 
+    .process-image{
+    width: 40%;
+    height: 100%;
+    padding: .9em;
+
+}
 .process-image img {
   width: 100%;
   height: auto;
   object-fit: cover;
-  display: block;
+  {% comment %} display: block; {% endcomment %}
 }
+
+
+{% comment %} 
 
 
 
@@ -104,7 +113,7 @@
 .process-steps {
   position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   height: 500px; /* Adjust height so spacing scales */
   border-left: 1px dotted #444;
@@ -148,33 +157,6 @@
 
 
 
-
-
-
-
-{% comment %} 
-
-  .process-wrapper {
-    display:flex;
-    flex-direction: row; 
-    height: 100%;
-    gap: 2rem;
-    border-bottom: 1px solid purple; 
-  }
-
-  .process-image{
-    width: 40%;
-    height: 100%;
-    padding: .9em;
-
-}
-
-  .process-image img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
  .process-content{
     display:flex;
 
@@ -190,11 +172,11 @@
     margin-top: 5rem;
   }
 
-  .process-steps {
+  {% comment %} .process-steps {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-  }
+  } {% endcomment %}
 
   .process-step {
     position: relative;
