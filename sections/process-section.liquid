@@ -42,6 +42,84 @@
 </section>
 
 <style>
+
+.process-section {
+  background-color: #f9f5ef;
+  padding: 4rem 2rem;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.process-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.process-heading {
+  font-family: "Georgia", serif;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+.process-steps {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 500px; /* Adjust height so spacing scales */
+  border-left: 1px dotted #444;
+  padding-left: 1.5rem;
+}
+
+.process-step {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.process-step .dot {
+  position: absolute;
+  left: -6px;
+  top: 0.5rem;
+  width: 8px;
+  height: 8px;
+  background: #333;
+  border-radius: 50%;
+}
+
+.process-step .number {
+  font-weight: 500;
+  margin-right: 0.25rem;
+}
+
+.process-step p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-width: 280px;
+}
+
+
+
+
+
+
+
+
+
+
+
   .process-wrapper {
     display:flex;
     flex-direction: row; 
