@@ -8,12 +8,12 @@
 
         <div class="process-content">
             <h2 class="process-heading">{{ section.settings.heading }}</h2>
-                    {% comment %} {% comment %} <div class="process-steps">
+                    {% comment %} <div class="process-steps">
                         <div class="process-step">
                             <span class="step-number">{{ i }}.</span>
                             <p class="step-text">{{ step_text }}</p>
                         </div>
-                    </div> {% endcomment %} {% endcomment %}
+                    </div> {% endcomment %}
         </div>
   </div>
 </section>
@@ -39,7 +39,12 @@
     object-fit: cover;
   }
 
- .process-content{display:flex;
+ .process-content{
+    display:flex;
+    height: 100%;
+
+
+}
 
 border: solid 1px green;
     width: 40%;
