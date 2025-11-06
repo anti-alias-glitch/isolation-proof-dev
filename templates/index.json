@@ -191,7 +191,7 @@
       "type": "process-section",
       "name": "Process",
       "settings": {
-        "article": "",
+        "article": "recipes/hot-toddy",
         "color_scheme": "background-1",
         "opacity": 100
       }
