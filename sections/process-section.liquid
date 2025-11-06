@@ -3,11 +3,12 @@
     
         <div class="process-image">
             <img src="{{ section.settings.process_image | img_url: 'master' }}">
-
+        </div>
+        <div class="process-heading-div">
+            <h2 class="process-heading">{{ section.settings.heading }}</h2>
         </div>
 
         <div class="process-content">
-            <h2 class="process-heading">{{ section.settings.heading }}</h2>
                     {% comment %} <div class="process-steps">
                         <div class="process-step">
                             <span class="step-number">{{ i }}.</span>
@@ -121,10 +122,18 @@
   padding-left: 1.5rem;
 }
 
+
+.process-step {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+
+
+
 {% comment %} 
-
-
-
 .col2{
     position: relative;
     display: flex;
@@ -136,12 +145,6 @@
 
 
 
-.process-step {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-}
 
 .process-step .dot {
   position: absolute;
@@ -171,16 +174,8 @@
 
 
 
-  {% comment %} .process-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  } {% endcomment %}
 
-  .process-step {
-    position: relative;
-    padding-left: 1.5rem;
-  }
+
 
   .step-number {
     font-weight: 500;
