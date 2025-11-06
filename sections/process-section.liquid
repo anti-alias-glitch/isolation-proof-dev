@@ -1,0 +1,83 @@
+
+{{ 'process-section.css' | asset_url | stylesheet_tag }}
+
+  
+{%- liquid assign article = section.settings.article -%}
+
+<div class = " color-{{  section.settings.color_scheme }} main-content">
+
+  <div class = "column1" >
+    <div>
+      <a href="{{ article.url }}">Field Notes</a>
+    </div>
+    <div>{{ article.created_at | date: '%m.%d.%Y' }}</div>
+    <div>{{ article.metafields.custom.location.value.town }}</div>
+    <div> {{ article.metafields.custom.location.value.state }} </div>
+  </div>
+
+  <div class="row2">
+      <h2>{{ article.title }}</h2>
+        <a href="{{ article.url }}"><button>Read More</button></a>
+
+  </div>
+          
+
+</div>
+{% schema %}
+    {
+    "name": "Featured Article",
+    "class":"featured-article",
+    "settings": [
+        {
+      "type": "article",
+      "id": "article",
+      "label": "Article"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "accent 1"      
+        },
+         {
+          "value": "accent-2",
+          "label": "accent 2"      
+        },
+         {
+          "value": "background-1",
+          "label": "background 1"      
+        },  
+        {
+          "value": "background-2",
+          "label": "background 2"      
+        },
+        {
+          "value": "inverse",
+          "label": "inverse"      
+        }
+      ],
+      "default": "background-1",
+      "label": "color scheme"
+    },
+    {
+        "type": "range",
+        "id": "opacity",
+        "max": 100,
+        "min": 0,
+        "label": "Image Opacity",
+        "default": 100
+    },
+   
+    ],
+    "presets": [
+        {
+        "name": "Featured Article"
+        }
+    ]
+
+    }
+{% endschema %}
+
+
