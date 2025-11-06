@@ -1,79 +1,119 @@
+{% comment %}
+  Process Section
+  Left: Image
+  Right: Process steps (1–5, 5 optional)
+{% endcomment %}
 
-{{ 'process-section.css' | asset_url | stylesheet_tag }}
+<section class="process-section">
+  <div class="process-wrapper">
+    <div class="process-image">
+      {% if section.settings.process_image %}
+        <img 
+          src="{{ section.settings.process_image | img_url: 'master' }}" 
+          alt="{{ section.settings.image_alt | escape }}">
+      {% endif %}
+    </div>
 
-  
-{%- liquid assign article = section.settings.article -%}
+    <div class="process-content">
+      {% if section.settings.heading != blank %}
+        <h2 class="process-heading">{{ section.settings.heading }}</h2>
+      {% endif %}
 
-<div class = " color-{{  section.settings.color_scheme }} main-content">
-
-  <div class = "column1" style="background-image:url({{ section.settings.article.image | image_url }});" >
-                {% comment %} image here  {% endcomment %}
-                 <h2> image </h2>
+    </div>
   </div>
+</section>
 
-  <div class="column2">
-      <h2>{{ section.settings.article.title }}</h2>
-  </div>
-          
+<style>
+  .process-wrapper {
+    display: flex;
+    align-items: start;
+    gap: 2rem;
+  }
 
-</div>
+  .process-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .process-content {
+    flex: 1;
+  }
+
+  .process-heading {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .process-step {
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  .step-number {
+    font-weight: 500;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+</style>
+
 {% schema %}
+{
+  "name": "Process Section",
+  "settings": [
     {
-    "name": "Process",
-    "class":"Process",
-    "settings": [
-        {
-      "type": "article", //?? 
-      "id": "article",
-      "label": "Article"
+      "type": "image_picker",
+      "id": "process_image",
+      "label": "Process Image"
     },
     {
-      "type": "select",
-      "id": "color_scheme",
-      "options": [
-        {
-          "value": "accent-1",
-          "label": "accent 1"      
-        },
-         {
-          "value": "accent-2",
-          "label": "accent 2"      
-        },
-         {
-          "value": "background-1",
-          "label": "background 1"      
-        },  
-        {
-          "value": "background-2",
-          "label": "background 2"      
-        },
-        {
-          "value": "inverse",
-          "label": "inverse"      
-        }
-      ],
-      "default": "background-1",
-      "label": "color scheme"
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image Alt Text"
     },
     {
-        "type": "range",
-        "id": "opacity",
-        "max": 100,
-        "min": 0,
-        "label": "Image Opacity",
-        "default": 100
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The Process"
     },
-   
-    ],
-    "presets": [
-        {
-        "name": "Process"
-        }
-    ]
-
+    {
+      "type": "textarea",
+      "id": "step_1",
+      "label": "Step 1"
+    },
+    {
+      "type": "textarea",
+      "id": "step_2",
+      "label": "Step 2"
+    },
+    {
+      "type": "textarea",
+      "id": "step_3",
+      "label": "Step 3"
+    },
+    {
+      "type": "textarea",
+      "id": "step_4",
+      "label": "Step 4"
+    },
+    {
+      "type": "textarea",
+      "id": "step_5",
+      "label": "Step 5 (optional)"
     }
+  ],
+  "presets": [
+    {
+      "name": "Process Section"
+    }
+  ]
+}
 {% endschema %}
-
-
-
-
