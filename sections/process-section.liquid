@@ -18,7 +18,18 @@
       {% if section.settings.heading != blank %}
         <h2 class="process-heading">{{ section.settings.heading }}</h2>
       {% endif %}
-
+{% comment %} 
+      <div class="process-steps">
+        {% for i in (1..5) %}
+          {% assign step_text = section.settings["step_" | append: i ] %}
+          {% if step_text != blank %}
+            <div class="process-step">
+              <span class="step-number">{{ i }}.</span>
+              <p class="step-text">{{ step_text }}</p>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div> {% endcomment %}
     </div>
   </div>
 </section>
