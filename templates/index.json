@@ -191,9 +191,14 @@
       "type": "process-section",
       "name": "Process",
       "settings": {
-        "article": "recipes/hot-toddy",
-        "color_scheme": "background-1",
-        "opacity": 100
+        "process_image": "shopify://shop_images/211023_ISOLATION_PROOF_SHOT_01_CATSKILLS_SCENERY001_1.png",
+        "image_alt": "",
+        "heading": "The Process",
+        "step_1": "Start with 190 proof corn neutral spirit from Finger Lakes, NY",
+        "step_2": "Dilute to 100 proof with our mountain spring water",
+        "step_3": "Overnight maceration at 180°F",
+        "step_4": "Start drinking!",
+        "step_5": ""
       }
     }
   },
