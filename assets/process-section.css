@@ -6,6 +6,10 @@
 .Process .column1 {
     border: solid 1px purple; 
 }
+
+.Process .column1 {
+    border: solid 1px green; 
+}
     
     
     .featured-article .main-content{
