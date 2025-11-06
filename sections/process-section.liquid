@@ -2,19 +2,18 @@
   <div class="process-wrapper">
     
         <div class="process-image">
-       <img src="{{ section.settings.process_image | img_url: 'master' }}">
-        
-        
+            <img src="{{ section.settings.process_image | img_url: 'master' }}">
+
         </div>
 
         <div class="process-content">
             <h2 class="process-heading">{{ section.settings.heading }}</h2>
-                    {% comment %} <div class="process-steps">
+                    {% comment %} {% comment %} <div class="process-steps">
                         <div class="process-step">
                             <span class="step-number">{{ i }}.</span>
                             <p class="step-text">{{ step_text }}</p>
                         </div>
-                    </div> {% endcomment %}
+                    </div> {% endcomment %} {% endcomment %}
         </div>
   </div>
 </section>
