@@ -1,26 +1,19 @@
-{% comment %}
-  Process Section
-  Left: Image
-  Right: Process steps (1–5, 5 optional)
-{% endcomment %}
-
 <section class="process-section">
   <div class="process-wrapper">
     <div class="process-image">
       {% if section.settings.process_image %}
         <img 
           src="{{ section.settings.process_image | img_url: 'master' }}" 
-          alt="{{ section.settings.image_alt | escape }}">
       {% endif %}
     </div>
 
     <div class="process-content">
-      {% if section.settings.heading != blank %}
+
         <h2 class="process-heading">{{ section.settings.heading }}</h2>
-      {% endif %}
-{% comment %} 
+      
+
       <div class="process-steps">
-        {% for i in (1..5) %}
+        {% comment %} {% for i in (1..5) %}
           {% assign step_text = section.settings["step_" | append: i ] %}
           {% if step_text != blank %}
             <div class="process-step">
@@ -28,8 +21,8 @@
               <p class="step-text">{{ step_text }}</p>
             </div>
           {% endif %}
-        {% endfor %}
-      </div> {% endcomment %}
+        {% endfor %} {% endcomment %}
+      </div>
     </div>
   </div>
 </section>
@@ -52,7 +45,9 @@
   }
 
   .process-heading {
+    font-family: "Century Schoolbook";
     font-weight: 600;
+    font-size: 200px;
     margin-bottom: 1.5rem;
   }
 
