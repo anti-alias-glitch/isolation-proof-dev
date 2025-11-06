@@ -4,16 +4,15 @@
   
 {%- liquid assign article = section.settings.article -%}
 
-<div class = " color-{{  section.settings.color_scheme }} main-content">
+<div class = " color-{{  section.settings.color_scheme }} main-content" style="background-image:url({{ section.settings.article.image | image_url }});" class="featured_article__section">
 
-  <div class = "column1" >
-    hi
-    {% comment %} <div>
+  <div class = "row1" >
+    <div>
       <a href="{{ article.url }}">Field Notes</a>
     </div>
     <div>{{ article.created_at | date: '%m.%d.%Y' }}</div>
     <div>{{ article.metafields.custom.location.value.town }}</div>
-    <div> {{ article.metafields.custom.location.value.state }} </div> {% endcomment %}
+    <div> {{ article.metafields.custom.location.value.state }} </div>
   </div>
 
   <div class="row2">
