@@ -8,7 +8,7 @@
 
   <div class = "column1" >
     <div>
-      <a href="{{ article.url }}">Field Notes</a>
+            <div>{{ article.image | date: '%m.%d.%Y' }}</div> 
     </div>
     <div>{{ article.created_at | date: '%m.%d.%Y' }}</div>
     <div>{{ article.metafields.custom.location.value.town }}</div>
