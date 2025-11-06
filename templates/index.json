@@ -183,8 +183,17 @@
       "name": "Featured Article",
       "settings": {
         "article": "recipes/negroni",
-        "opacity": 100,
-        "background": "#000000"
+        "color_scheme": "background-1",
+        "opacity": 100
+      }
+    },
+    "process_section_cKrMF4": {
+      "type": "process-section",
+      "name": "Process",
+      "settings": {
+        "article": "",
+        "color_scheme": "background-1",
+        "opacity": 100
       }
     }
   },
@@ -197,6 +206,7 @@
     "slideshow_zQb99i",
     "custom_featured_collection_d6qJ9Y",
     "article_tabs_Xac7Uz",
-    "featured_blog_post_qW9j7W"
+    "featured_blog_post_qW9j7W",
+    "process_section_cKrMF4"
   ]
 }
