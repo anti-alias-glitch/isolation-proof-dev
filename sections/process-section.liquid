@@ -1,48 +1,32 @@
+//not working 
+
 {{ 'process-section.css' | asset_url | stylesheet_tag }}
 
   
 {%- liquid assign article = section.settings.article -%}
 
-<div class = " color-{{  section.settings.color_scheme }} main-content" style="background-image:url({{ section.settings.article.image | image_url }});" class="featured_article__section">
-    <div class = " color-{{  section.settings.color_scheme }} main-content">
+<div class = " color-{{  section.settings.color_scheme }} main-content" style="background-image:url({{ section.settings.article.image | image_url }});">
 
   <div class = "column1" >
     <div>
         hello heloo 
-
-       <img src=url{{  section.settings.article.image | image_url }}></div>
+       {{  section.settings.article.image | image_url }}  
     </div>
   </div>
 
   <div class="column2">
       <h2>{{ section.settings.article.title }}</h2>
   </div>
-
-
-  <div class = "row1" >
-    <div>
-      <a href="{{ article.url }}">Field Notes</a>
-    </div>
-    <div>{{ article.created_at | date: '%m.%d.%Y' }}</div>
-    <div>{{ article.metafields.custom.location.value.town }}</div>
-    <div> {{ article.metafields.custom.location.value.state }} </div>
-  </div>
-
-  <div class="row2">
-      <h2>{{ article.title }}</h2>
-        <a href="{{ article.url }}"><button>Read More</button></a>
-
-  </div>
           
 
 </div>
 {% schema %}
     {
-    "name": "Featured Article",
-    "class":"featured-article",
+    "name": "Process",
+    "class":"Process",
     "settings": [
         {
-      "type": "article",
+      "type": "article", //?? 
       "id": "article",
       "label": "Article"
     },
@@ -86,9 +70,13 @@
     ],
     "presets": [
         {
-        "name": "Featured Article"
+        "name": "Process"
         }
     ]
 
     }
 {% endschema %}
+
+
+
+
