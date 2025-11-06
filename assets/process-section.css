@@ -1,6 +1,6 @@
 .Process .main-content{
     display:flex;
-    flex-direction: column; 
+    flex-direction: row; 
 }
 
 .Process .column1 {
