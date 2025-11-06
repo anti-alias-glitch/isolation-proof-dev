@@ -2,10 +2,11 @@
   <div class="process-wrapper">
     
         <div class="process-image">
-        {% if section.settings.process_image %}
+       
             <img 
             src="{{ section.settings.process_image | img_url: 'master' }}" 
-        {% endif %}
+       
+
         </div>
 
         <div class="process-content">
@@ -24,7 +25,7 @@
   .process-wrapper {
     display:flex;
     align-items: start;
-    flex-direction: column; 
+    flex-direction: row; 
     height: 100%;
     gap: 2rem;
   }
