@@ -1,4 +1,8 @@
-
+.Process .column1 {
+    border: solid 1px purple; 
+}
+    
+    
     .featured-article .main-content{
       width: 100%;
       height: 700px;
