@@ -150,22 +150,35 @@ text-align: right;
 {% comment %} .process-step{
 width: 65%;} {% endcomment %}
 
-.process-step .dot{
+{% comment %} .process-step .dot{
   position: absolute;
   left: 48.7%;
   width: 15px;
   height: 15px;
   background: #473F21;
   border-radius: 50%;
-}
+} {% endcomment %}
 
-{% comment %} .process-step .dot:nth-child(1){
-  top: 5px;
+.process-step .dot:nth-child(1){
+       position: absolute;
+  left: 48.7%;
+  width: 15px;
+  height: 15px;
+  background: #473F21;
+  border-radius: 50%;
+
+    top: 5px;
 }
 
 .process-step .dot:nth-child(2){
-    top: 90px;
-} {% endcomment %}
+     position: absolute;
+  left: 48.7%;
+  width: 15px;
+  height: 15px;
+  background: #473F21;
+  border-radius: 50%;
+  top:90px;
+} 
 
 
 .process-step .number {
