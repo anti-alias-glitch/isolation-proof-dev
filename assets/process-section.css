@@ -1,67 +1,149 @@
-/* not really using this  */
 
 
-.Process .column1 {
-    border: solid 1px green; 
+  .process-wrapper {
+    display:flex;
+    flex-direction: row; 
+    height: 100%;
+    gap: 2rem;
+    align-items: center;
+  }
+
+    .process-image{
+    width: 40%;
+    height: 100%;
+    padding: .9em;
+
 }
-    
-    
-    .featured-article .main-content{
-      width: 100%;
-      height: 700px;
-      background-size:cover; 
-      opacity: 0.9; display:flex;
-      padding: 14em 0vw 4em 0vw; 
-      flex-direction:column;
-      justify-content:space-between;
-      color: #EFE5D1;
-    }
+.process-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  {% comment %} display: block; {% endcomment %}
+}
 
-    .featured-article .row1{
-      width: 95%;
-      display:flex; 
-      justify-content:space-between;
-      padding: 0px 3px 5px 3px; 
-      align-self:center;
-      font-size: calc(1.25em);
-      font-weight: 400;
-      line-height: 110%; 
-      text-transform: uppercase;
-      font-family: 'Saa Series';
-      border-bottom: 1px solid #EFE5D1;     
-    }
 
-    .featured-article a{
-      text-decoration: none; 
-      color:#EFE5D1;
-    }
+ .process-content{
+    display:flex;
+    height: 100%;
+}
 
-     .featured-article .row2{
-      width: 95%;
-      align-self:center;
-      display:flex;
-      justify-content:space-between;
-    }
+ .process-heading-div {
+    align-self:flex-start;
+    margin-top: 5rem;
+  }
+   .process-heading {
+    font-family: "Century Schoolbook";
+    font-weight: 400;
+    text-transform: uppercase;
+  }
 
-    .featured-article h2{
-      color: #EFE5D1;
-      font-family: 'Futura';
-      font-size: 42.527px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 110%;
-    }
+  .process-steps {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: 500px; /* Adjust height so spacing scales */
+  {% comment %} padding-left: 1.5rem; {% endcomment %}
+}
 
-    .featured-article button{
-      font-family:Century Schoolbook;
-      background-color: #F9F1E0;
-      color: #473F21;
-      text-transform:uppercase;
-      font-weight: 600;
-      font-size: 19px;
-      box-shadow: none;
-      border: none;
-      width: 160px;
-      padding: 9px 25px 9px 25px;
-      border-radius: 30px;"
-    }
+.col1, .col2{
+width: 50%;
+height:100%;
+}
+.col1{
+border-right: 1px dashed #473F21;
+padding-right: 20px;
+display:flex;
+flex-direction: column;
+ gap:120px;  {% comment %} should we make this a slider  {% endcomment %}
+align-items: flex-end;
+}
+
+.col2{
+padding-left: 20px;
+padding-top: 140px;
+flex-direction: column;
+display:flex;
+ gap:110px;  {% comment %} should we make this a slider  {% endcomment %}
+
+}
+
+.col1 p{
+text-align: right;
+}
+
+.process-step{
+    display: flex;
+    width: 60%;
+} 
+
+.dot1{
+    position: absolute;
+  left: 49%;
+  width: 10px;
+  height: 10px;
+  background: #473F21;
+  border-radius: 50%;
+    top: 0px;
+}
+
+.dot2{
+    position: absolute;
+  left: 49%;
+  width: 10px;
+  height: 10px;
+  background: #473F21;
+  border-radius: 50%;
+  top:150px;
+} 
+
+.dot3{
+    position: absolute;
+  left: 49%;
+  width: 10px;
+  height: 10px;
+  background: #473F21;
+  border-radius: 50%;
+  top:260px;
+} 
+.dot4{
+    position: absolute;
+  left: 49%;
+
+  width: 10px;
+  height: 10px;
+  background: #473F21;
+  border-radius: 50%;
+  top:360px;
+} 
+.dot5{
+    position: absolute;
+  left: 49%;
+  width: 10px;
+  height: 10px;
+  background: #473F21;
+  border-radius: 50%;
+  top:450px;
+} 
+
+.process-step .number {
+    font-family: 'Century Schoolbook';
+    font-size: 17px;
+}
+
+.process-step p {
+    font-family: 'Futura';
+    font-size: 17px;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 280px;
+}
+
+
+  .step-number {
+    font-weight: 500;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+
